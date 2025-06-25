@@ -4,7 +4,7 @@
     --main-font-family: 'PressStart2P';
     --variable-font-family: 'Inter-Variable';
     --main-font-weight: 400;
-    --variable-font-weight: 400;
+    --variable-font-weight: 700;
     --title-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     --min-title-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     --section-background-color: #fff;

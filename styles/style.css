@@ -61,16 +61,15 @@
 
 .header__title {
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: "wght" var(--variable-font-weight);
+  font-variation-settings: "wght" var(--main-font-weight);
   font-size: var(--title-font-size);
   line-height: 100%;
-  text-transform: uppercase;
- 
+  text-transform: uppercase; 
 }
 
 .header__min-title {
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: "wght" var(--variable-font-weight);
+  font-variation-settings: "wght" var(--main-font-weight);
   font-size: var(--min-title-font-size);
   line-height: 100%;
   text-transform: uppercase;
@@ -142,7 +141,7 @@
 .section_lable-image {
   position: absolute;
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: 'wght' var(--variable-font-weight);
+  font-variation-settings: 'wght' var(--main-font-weight);
   font-size: 14px;
   line-height: 100%;
   color: #000;
@@ -151,6 +150,7 @@
   opacity: 0.5;
   padding-top: 25px;
   padding-right: 14px;
+  text-shadow: -1px -1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
   
 }
 
@@ -165,24 +165,24 @@
 .section__text {
   display: flex;
   flex-direction: column;
-  padding: 25px 25px 25px 25px;
+  padding: 25px 26px;
   gap: 27px;
 }
 
 .section__title {
   font-family: var(--variable-font-family), sans-serif;
   font-size: 18px;
+  font-variation-settings: "wght" var(--variable-font-weight);
   line-height: 100%;
   padding: 5px 10px 10px;
   border-bottom: 2px solid currentColor;
-  font-weight: 700;
 }
 
 .section__text-paragraph {
   font-family: var(--variable-font-family), sans-serif;
+  font-variation-settings: "wght" var(--main-font-weight);
   font-size: 18px;
   line-height: 21px;
-  font-weight: var(--main-font-weight);
 }
 
 .section_button-like {
@@ -202,7 +202,7 @@
   padding: 0;
   gap: 6px;
   cursor: pointer;
-  transition: border-color 0.3s ease;
+  transition: border 0.3s ease;
   background-color: #fff;
   border: none;
 }
@@ -227,7 +227,7 @@
   min-width: 130px;
   min-height: 38px;
   line-height: 1;
-  transition: color 0.3s;
+  transition: box-shadow 0.3s;
   text-align: center;
   z-index: 1;
 
@@ -264,7 +264,7 @@
 
 .button__text { 
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: 'wght' var(--variable-font-weight);
+  font-variation-settings: 'wght' var(--main-font-weight);
   color: #fff;
   font-size: 14px;
   line-height: 90%;
@@ -301,7 +301,7 @@
 }
 
 .main__dialog[open]::backdrop {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .main__dialog-text {
@@ -318,7 +318,7 @@
 
 .button__text-gialog {
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: 'wght' var(--variable-font-weight);
+  font-variation-settings: 'wght' var(--main-font-weight);
   font-size: 14px;
   line-height: 150%;
   align-items: center;
@@ -333,23 +333,30 @@
 }
 
 @media (width < 376px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
  .header {
     inline-size: 100%;
     padding-block-start: 122px;
     padding-block-end: 122px;
-    padding-inline-end: 14.5px;
-    padding-inline-start: 14.5px;
+    padding-inline-end: 14.3px;
+    padding-inline-start: 14.3px;
     
+  }
+
+  .main {
+    outline: 1px solid #000;
   }
 
   .section {
     inline-size: 100%;
+     
     
   }  
-
-  .section__text-paragraph {
-    letter-spacing: 0.1px;
-  }
 
   .main__dialog[open] {
     padding: 30px 40px;
@@ -362,10 +369,11 @@
 
 
   .button__main-style {
-    display: grid;
-    grid-template-rows: 3fr 1fr;
+    display: flex;
+    flex-direction: column;
     justify-items: center;
-    padding: 15px 20px;
+    min-block-size: 84px;
+    min-inline-size: 306px;
 
   }
 
