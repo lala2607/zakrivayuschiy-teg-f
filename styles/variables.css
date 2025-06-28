@@ -11,4 +11,6 @@
     --border-color: #000;
     --contour-color: #000;
     --animation-fill-color: #ff0000;
+    --padding-title: clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem) 0 clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem);
+    --inline-size-main: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 }

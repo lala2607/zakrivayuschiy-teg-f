@@ -13,9 +13,10 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: repeating-linear-gradient(
       to right,
       #d3d3d3,
@@ -39,29 +40,24 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-
-
+  font-variation-settings: "wght" var(--main-font-weight);
 }
 
 .header {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  inline-size: 700px;
+  inline-size: var(--inline-size-main);
   border: 2px solid var(--border-color);
   margin-block-start: 100px;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding-block-start: 130px;
-  padding-block-end: 130px;
-  
-
+  padding: var(--padding-title);
 }
 
 .header__title {
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: "wght" var(--main-font-weight);
   font-size: var(--title-font-size);
   line-height: 100%;
   text-transform: uppercase; 
@@ -69,40 +65,33 @@
 
 .header__min-title {
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: "wght" var(--main-font-weight);
   font-size: var(--min-title-font-size);
   line-height: 100%;
   text-transform: uppercase;
- 
-
 }
 
 .main {
   margin-top: 100px;
   display: grid;
   gap: 50px;
+  inline-size: var(--inline-size-main);
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  inline-size: 696px;
   border: 2px solid var(--border-color);
   background-color: var(--section-background-color);
-  
 }
 
 .section__image-style {
   display: block;
-  position: relative;
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;
   border-bottom: 2px solid var(--border-color);
   object-position: center;
-  
 }
-
 
 .section_image {
   display: flex;
@@ -141,17 +130,15 @@
 .section_lable-image {
   position: absolute;
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: 'wght' var(--main-font-weight);
   font-size: 14px;
   line-height: 100%;
   color: #000;
-  mix-blend-mode: normal;
+  mix-blend-mode: hard-light;
   text-transform: uppercase;
   opacity: 0.5;
   padding-top: 25px;
-  padding-right: 14px;
-  text-shadow: -1px -1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-  
+  padding-right: 25px;
+  text-shadow: 0 0 1px #fff;
 }
 
 @supports (text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff) {
@@ -165,7 +152,7 @@
 .section__text {
   display: flex;
   flex-direction: column;
-  padding: 25px 26px;
+  padding: 25px 25px;
   gap: 27px;
 }
 
@@ -173,14 +160,12 @@
   font-family: var(--variable-font-family), sans-serif;
   font-size: 18px;
   font-variation-settings: "wght" var(--variable-font-weight);
-  line-height: 100%;
-  padding: 5px 10px 10px;
+  padding: 5px 10px 5px 10px;
   border-bottom: 2px solid currentColor;
 }
 
 .section__text-paragraph {
   font-family: var(--variable-font-family), sans-serif;
-  font-variation-settings: "wght" var(--main-font-weight);
   font-size: 18px;
   line-height: 21px;
 }
@@ -188,7 +173,7 @@
 .section_button-like {
   display: flex;
   justify-content: end;
-  gap: 8px;
+  gap: 5px;
   padding-bottom: 25px;
   padding-right: 25px;
 }
@@ -201,10 +186,10 @@
   height: 38px;
   padding: 0;
   gap: 6px;
+  border: 2px solid transparent;
   cursor: pointer;
   transition: border 0.3s ease;
   background-color: #fff;
-  border: none;
 }
 
 .card__icon-button:focus {
@@ -214,7 +199,6 @@
 .card__icon-button:focus-visible {
   border: 2px solid var(--border-color);
 }
-
 
 .button-style {
   display: flex;
@@ -227,10 +211,9 @@
   min-width: 130px;
   min-height: 38px;
   line-height: 1;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s ease;
   text-align: center;
   z-index: 1;
-
 }
 
 .button-style:focus {
@@ -250,13 +233,11 @@
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
   z-index: -1;
- 
 }
 
 .button-style:hover::before {
   transform: scaleX(1);
 }
-
 
 .button-style:hover {
   color: white;
@@ -264,7 +245,6 @@
 
 .button__text { 
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: 'wght' var(--main-font-weight);
   color: #fff;
   font-size: 14px;
   line-height: 90%;
@@ -273,8 +253,6 @@
   mix-blend-mode: difference;
   position: relative;
   z-index: 1;
-  
-
 }
 
 .main__button {
@@ -282,16 +260,15 @@
   flex-direction: column;
   align-items: center;
   padding-block-end: 103px;
-
 }
 
 .main__dialog[open] {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 30px;
   gap: 30px;
   width: 357px;
-  
 }
 
 .icon-floppy {
@@ -308,23 +285,21 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
   align-items: center;
+  gap: 5px;
 }
 
 .icon__main-floppy {
   width: 39px;
   height: 39px;
-
 }
 
 .button__text-gialog {
   font-family: var(--main-font-family), sans-serif;
-  font-variation-settings: 'wght' var(--main-font-weight);
   font-size: 14px;
   line-height: 150%;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
- 
 }
 
 .button__main-style {
@@ -332,33 +307,23 @@
   min-inline-size: 335px;
 }
 
-@media (width < 376px) {
-  .page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
+@media (width <= 376px) {
  .header {
     inline-size: 100%;
-    padding-block-start: 122px;
-    padding-block-end: 122px;
-    padding-inline-end: 14.3px;
-    padding-inline-start: 14.3px;
-    
-  }
-
-  .main {
-    outline: 1px solid #000;
+    margin-block-start: 100px;
   }
 
   .section {
     inline-size: 100%;
-     
-    
   }  
 
+  .section_lable-image {
+    padding-right: 10px;
+  }
+
   .main__dialog[open] {
+    width: 341px;
     padding: 30px 40px;
   }
 
@@ -367,6 +332,14 @@
     height: 28px;
   }
 
+  .button__text {
+    font-size: 14px;
+  }
+
+  .button-style {
+    min-block-size: 38px;
+    min-inline-size: 130px;
+  }
 
   .button__main-style {
     display: flex;
@@ -374,7 +347,5 @@
     justify-items: center;
     min-block-size: 84px;
     min-inline-size: 306px;
-
   }
-
 }
